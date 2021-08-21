@@ -1,0 +1,26 @@
+.header-top {
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-between;
+}
+.tilte-page {
+  display: inline-block;
+  margin: 8px 0px;
+  padding: 0px;
+}
+.tilte-page a {
+  font-weight: 500;
+  font-size: 48px;
+  text-decoration: none;
+  color: black;
+}
+
+.header-top form{
+    display: block;
+    margin: auto 0px;
+    font-size: 18px;
+}
+
+.header-top form input{
+    font-size: 16px;
+}
