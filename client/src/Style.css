@@ -10,6 +10,8 @@
      --linkPurple: rgb(59, 0, 99);
  }
 
+ /* font-family: 'Roboto Condensed', sans-serif; */
+
  /* ********** GENERAL STYLE ********** */
 
  * {
@@ -41,6 +43,10 @@
      width: 80%;
      height: 1px;
      /* background-color: rgb(211, 211, 211); */
+ }
+
+ .active {
+     display: block !important;
  }
 
  /* ********** HEADER ********** */
@@ -103,6 +109,7 @@
      padding: 8px 16px;
      height: 36px;
      text-decoration: none;
+     font-family: 'Roboto Condensed', sans-serif;
      color: var(--darkText);
      width: fit-content;
      border-radius: 20px;
@@ -146,6 +153,7 @@
 
  .dropdown-a {
      display: block;
+     font-family: 'Roboto Condensed', sans-serif;
      text-decoration: none;
      color: var(--darkText);
      width: 100%;
@@ -212,6 +220,7 @@
      height: 40px;
      width: 120px;
      font-size: 14px;
+     font-family: 'Roboto Condensed', sans-serif;
      border-radius: 10px;
      cursor: pointer;
      outline: none;
@@ -262,7 +271,7 @@
      font-size: 80px;
      text-align: center;
      font-family: 'Source Code Pro', monospace;
-     color: var(--darkGrey);
+     color: var(--darkText);
  }
 
  .img-welcome {
@@ -296,6 +305,7 @@
      margin: 20px;
      font-size: 40px;
      text-align: center;
+     color: var(--darkGrey);
      font-family: 'Lato', sans-serif;
  }
 
@@ -307,6 +317,7 @@
  }
 
  .post-item-info .when-whom {
+    font-family: 'Roboto Condensed', sans-serif;
      color: var(--darkGrey);
  }
 
@@ -319,11 +330,61 @@
  .post-item p {
      width: 90%;
      font-size: 18px;
+     font-family: 'Source Code Pro', monospace;
      text-align: justify;
  }
 
- .post-topic a{
+ .post-topic a {
      padding: 0px 5px;
      color: var(--darkWhite) !important;
      background-color: var(--grey);
+ }
+
+ .post-title {
+     margin: 20px;
+     font-size: 60px;
+     text-align: center;
+     color: var(--darkText);
+     font-family: 'Lato', sans-serif;
+ }
+
+ .post-img {
+     width: 80%;
+     /* height: 300px; */
+     border-radius: 5px;
+     object-fit: cover;
+ }
+
+ .post-editDelete {
+     margin: 10px 10% 10px auto;
+     /* background-color: yellow; */
+ }
+
+ .post-editDelete i {
+     /* display: none; */
+     margin-left: 10px;
+     font-size: 120%;
+ }
+
+ .edit-icon {
+     cursor: pointer;
+     color: #000080;
+ }
+
+ .delete-icon {
+     cursor: pointer;
+     color: #800000;
+ }
+
+ .post-para {
+     font-family: 'Source Code Pro', monospace;
+     margin: 10px 20px;
+     font-size: 18px;
+     white-space: pre-line;
+ }
+
+ .post-para::first-letter {
+     margin-left: 20px;
+     font-size: 28px;
+     font-weight: 600;
  }

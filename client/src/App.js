@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Body from './components/Body';
 import Home from './pages/Home';
 import Stories from './pages/Stories';
+import Post from './pages/Post';
 
 
 const App = () => {
@@ -17,7 +18,7 @@ const App = () => {
         <>
             <Header />
             <Body>
-                <Stories />
+                <Post />
             </Body>
 
         </>
