@@ -38,6 +38,14 @@
      background-image: linear-gradient(to right, red, yellow);
  }
 
+ .visibleBlock {
+     display: block;
+ }
+
+ .invisible {
+     display: none;
+ }
+
  .divider-h {
      margin: 0px auto;
      width: 80%;
@@ -195,12 +203,14 @@
  }
 
  .body-left {
+     margin: 0px auto;
      padding: 10px 0px;
      width: 78%;
      display: flex;
      flex-direction: column;
      align-items: center;
      min-height: 100vh;
+     overflow-x: hidden;
  }
 
  .body-right {
@@ -317,7 +327,7 @@
  }
 
  .post-item-info .when-whom {
-    font-family: 'Roboto Condensed', sans-serif;
+     font-family: 'Roboto Condensed', sans-serif;
      color: var(--darkGrey);
  }
 
@@ -333,6 +343,18 @@
      font-family: 'Source Code Pro', monospace;
      text-align: justify;
  }
+
+ .post-item button{
+     margin: 10px 0px;
+     color: var(--darkText);
+     cursor: pointer;
+     font-size: 18px;
+     font-family: 'Lato', sans-serif;
+     border: none;
+     background-color: transparent;
+ }
+
+ /* ********** POST ********** */
 
  .post-topic a {
      padding: 0px 5px;
@@ -376,10 +398,12 @@
      color: #800000;
  }
 
- .post-para {
-     font-family: 'Source Code Pro', monospace;
-     margin: 10px 20px;
+ .post-content {
+     margin: 0px;
+     padding: 10px 20px;
+     width: 100%;
      font-size: 18px;
+     font-family: 'Source Code Pro', monospace;
      white-space: pre-line;
  }
 
@@ -387,4 +411,204 @@
      margin-left: 20px;
      font-size: 28px;
      font-weight: 600;
+ }
+
+ /* ********** CREATE POST ********** */
+
+ .createPost-form {
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     height: fit-content;
+ }
+
+ .createPostForm-div {
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     min-height: 100vh;
+ }
+
+ .createPost-title {
+     margin: 20px;
+     font-size: 60px;
+     text-align: center;
+     color: var(--darkText);
+     font-family: 'Lato', sans-serif;
+     outline: none;
+     border: none;
+ }
+
+ .createPost-inpuImgLabel {
+     margin: 10px;
+     font-size: 120%;
+     font-family: 'Roboto Condensed', sans-serif;
+     cursor: pointer;
+     color: var(--darkGrey);
+     border: 1px dashed var(--lightGrey);
+ }
+
+ .createPost-content {
+     margin: 0px;
+     padding: 10px 20px;
+     width: 100%;
+     min-height: 300px;
+     font-size: 18px;
+     font-family: 'Source Code Pro', monospace;
+     white-space: pre-line;
+     outline: none;
+     border: none;
+ }
+
+ .createPost-addDeleteTopic {
+     margin: 10px 5% 5px auto;
+ }
+
+ .createPost-addTopic {
+     padding: 2px;
+     cursor: pointer;
+     color: var(--darkGrey);
+     font-family: 'Roboto Condensed', sans-serif;
+     border: 1px dashed var(--lightGrey);
+ }
+
+ .createPost-deleteTopic {
+     display: flex;
+     flex-direction: row;
+ }
+
+ .createPost-deleteTopic i, .createPost-deleteTopic span {
+     margin: 0px 1px;
+     padding: 2px;
+     color: var(--darkWhite);
+     background-color: var(--grey);
+ }
+
+ /* ********** LOGIN **** */
+
+ .login {
+     padding: 0px auto;
+     height: calc(100vh - 110px);
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     /* background-color: black; */
+     background-image: url("penAndPaper.jpg");
+     /* background-image: linear-gradient(to bottom, var(gr) , yellow); */
+     background-size: cover;
+ }
+
+ .login-form {
+     /* margin-top: 50px; */
+     margin: 0px auto;
+     padding: 30px;
+     height: fit-content;
+     width: 647px;
+     display: flex;
+     flex-direction: column;
+     font-size: 20px;
+     border: 1px solid var(--darkGrey);
+     border-radius: 10px;
+     background-color: rgba(255, 255, 255, 0.6);
+ }
+
+ .login-form h1 {
+     margin: 0px auto;
+     font-size: 40px;
+     font-family: 'Roboto Condensed', sans-serif;
+     color: #fff;
+     text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+ }
+
+ .login-form label {
+     margin: 10px 0px;
+     font-family: 'Roboto Condensed', sans-serif;
+ }
+
+ .login-form input {
+     margin-bottom: 30px;
+     padding: 10px;
+     background-color: rgba(255, 255, 255, 0.7);
+     font-size: 20px;
+     font-family: 'Roboto Condensed', sans-serif;
+ }
+
+ .login-form button {
+     margin: 20px auto;
+     padding: 5px 25px;
+     cursor: pointer;
+     font-size: 20px;
+     border-radius: 10px;
+     background-color: rgb(102, 255, 0, 0.5);
+     font-family: 'Roboto Condensed', sans-serif;
+ }
+
+ .login-form a {
+     margin: 0px auto;
+ }
+
+ /* ********** RESISTER **** */
+
+ .register {
+     padding: 0px auto;
+     height: calc(100vh - 110px);
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     /* background-color: black; */
+     background-image: url("penAndPaper.jpg");
+     /* background-image: linear-gradient(to bottom, var(gr) , yellow); */
+     background-size: cover;
+ }
+
+ .register-form {
+     margin: 0px auto;
+     padding: 30px;
+     height: fit-content;
+     width: 647px;
+     display: flex;
+     flex-direction: column;
+     font-size: 20px;
+     border: 1px solid var(--darkGrey);
+     border-radius: 10px;
+     background-color: rgba(255, 255, 255, 0.6);
+ }
+
+ .register-form h1 {
+     margin: 0px auto;
+     font-size: 40px;
+     font-family: 'Roboto Condensed', sans-serif;
+     color: #fff;
+     text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+ }
+
+ .register-form label {
+     margin: 10px 0px;
+     font-family: 'Roboto Condensed', sans-serif;
+ }
+
+ .register-form input {
+     margin-bottom: 30px;
+     padding: 10px;
+     background-color: rgba(255, 255, 255, 0.7);
+     font-size: 20px;
+     font-family: 'Roboto Condensed', sans-serif;
+ }
+
+ .register-form button {
+     margin: 20px auto;
+     padding: 5px 25px;
+     cursor: pointer;
+     font-size: 20px;
+     border-radius: 10px;
+     background-color: rgba(136, 93, 1, 0.5);
+     font-family: 'Roboto Condensed', sans-serif;
+ }
+
+ .register-form a {
+     margin: 0px auto;
  }

@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function PostItem({ post }) {
 
+    console.log(post);
+
     const {title, content, author, postedOn} = post;
     return (
         <div className="post-item">
@@ -24,7 +26,9 @@ export default function PostItem({ post }) {
             </div>
             <img className="img" src="/assets/images/img1.jpg" alt="" />
             <p>{content}</p>
+            <button>See Post...</button>
             <div className="divider-h bgLightGrey" />
+            
         </div>
     )
 }
