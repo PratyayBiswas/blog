@@ -1,22 +1,49 @@
-import React from 'react';
+import {useEffect, useState} from 'react';
+import { useLocation } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
+import axios from 'axios';
 
 export default function Post() {
-    const title = "\tWhat is React.js";
-    const content = "Hello";
-    // const content = "React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes." + "\n\n" + "Declarative views make your code more predictable and easier to debug.";
-    const author = "Pratyay Biswas";
-    const postedOn = "10 August";
+
+    const location = useLocation().pathname.split('/')[2];
+
+    const [data, setData] = useState([]);
+    const [error, setError] = useState("");
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const res = await axios.get(`/post/${location}`);
+            console.log(res);
+            setData(res.data);
+            } catch (e) {
+                console.log(e);
+                setError(e)
+            }
+            
+        }
+        fetchData();
+    }, [location]);
+
+    if(error){
+        return(
+        <div className="error-container">
+            <span>Error occured!</span>
+            <span>Either removed or internal server error</span>
+            </div>
+        )
+    }
+
     return (
         <>
             <div className="body-left">
-                <h1 className="post-title">This is Title</h1>
+                <h1 className="post-title">{data.title}</h1>
                 <div className="post-item-info">
                     <span className="when-whom">
-                        Posted on <a href="#">{postedOn}</a>
+                        Posted on <a href="#">{data.createdAt}</a>
                     </span>
                     <span className="when-whom">
-                        -by <a href="#">{author}</a>
+                        -by <a href="#">{data.username}</a>
                     </span>
                 </div>
                 <div className="post-item-info">
@@ -34,7 +61,7 @@ export default function Post() {
                     <i className="fas fa-trash-alt delete-icon"></i>
                 </span>
 
-                <p className="post-content">{content}</p>
+                <p className="post-content">{data.content}</p>
             </div>
             <Sidebar btnTxt="Create new Post" url="/createpost" />
         </>

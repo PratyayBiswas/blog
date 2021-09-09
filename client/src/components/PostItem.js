@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function PostItem({ post }) {
+export default function PostItem({ post, key }) {
 
     console.log(post);
+    console.log(key);
 
-    const {title, content, author, postedOn} = post;
+    const { title, content, author, postedOn } = post;
     return (
         <div className="post-item">
             <h1 className="post-item-title">{title}</h1>
@@ -26,9 +28,12 @@ export default function PostItem({ post }) {
             </div>
             <img className="img" src="/assets/images/img1.jpg" alt="" />
             <p>{content}</p>
-            <button>See Post...</button>
+            <Link to={`/post/${post._id}`}>
+                <button>See Post...</button>
+            </Link>
+
             <div className="divider-h bgLightGrey" />
-            
+
         </div>
     )
 }

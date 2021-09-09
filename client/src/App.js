@@ -12,7 +12,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 const App = () => {
     const user = true;
-    const [authState, setAuthState] = useState(false);
+    const [authState, setAuthState] = useState(true);
     const [createState, setCreateState] = useState(false);
     // console.log(authState);
     return (

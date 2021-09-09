@@ -8,4 +8,4 @@ const CategoriesSchema = new mongoose.Schema({
     
 });
 
-module.exports = mongoose.model("Categories", UserSchema);
+module.exports = mongoose.model("Categories", CategoriesSchema);

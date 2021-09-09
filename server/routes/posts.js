@@ -68,6 +68,31 @@ router.get('/:id', async (req, res) => {
     } catch (error) {
         res.status(500).json(error);
     }
-})
+});
+
+// GET ALL
+router.get('/', async (req, res) => {
+    const username = req.query.user;
+    const cat = req.query.cat;
+
+    try {
+
+        let posts;
+
+        if(username){
+            posts = await Post.find({ username });
+        } else if(cat){
+            posts = await Post.find({ 
+                categories: {
+                $in:[cat]
+            }});
+        } else {
+            posts = await Post.find();
+        }
+        res.status(200).json(posts);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+});
 
 module.exports = router;
